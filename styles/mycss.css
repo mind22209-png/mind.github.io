@@ -1,0 +1,497 @@
+/* ==========================================================================
+   BASE STYLES & TYPOGRAPHY (ADDED)
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #050507;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==========================================================================
+   HERO & HEADER SECTION (ADDED)
+   ========================================================================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d58785?auto=format&fit=crop&w=1920&q=80') center/cover;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 5%;
+    border-bottom: 1px solid #141418;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: #00e5ff;
+    letter-spacing: 1px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #00e5ff;
+    color: #000;
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #00c4db;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+/* ==========================================================================
+   FUNCTIONAL BLOCKS STYLES (CORRECTED)
+   ========================================================================== */
+.section-subtitle {
+    text-align: center;
+    color: #aaaaaa;
+    margin-top: -15px;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.gallery-section, .calculator-section, .reviews-section, .faq-section {
+    padding: 80px 5%;
+    background-color: #0a0a0c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #141418;
+}
+
+.gallery-section h2, .calculator-section h2, .reviews-section h2, .faq-section h2 {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 1. Before/After Slider Section */
+.ba-slider-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.ba-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 2px solid #222;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    user-select: none;
+}
+
+.ba-slider img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* FIX: object-position keeps the image anchored to the left while resizing */
+    object-position: left top; 
+    display: block;
+}
+
+.image-after-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    border-right: 2px solid #00e5ff;
+}
+
+/* FIX: Ensure the image fills the parent container fully before cropping */
+.image-after {
+    width: 100% !important;
+    height: 100%;
+    max-width: none;
+}
+
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #00e5ff;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.handle-button {
+    width: 40px;
+    height: 40px;
+    background: #00e5ff;
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.6);
+}
+
+.slider-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 20;
+}
+
+/* 2. Calculator Section */
+.calc-container {
+    max-width: 700px;
+    width: 100%;
+    background: #141418;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #222;
+}
+
+.calc-block {
+    margin-bottom: 30px;
+}
+
+.calc-block h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+.calc-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.calc-card {
+    background: #1a1a20;
+    border: 1px solid #333;
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.calc-card:hover, .calc-checkbox:hover {
+    border-color: #555;
+}
+
+.calc-card.active {
+    border-color: #00e5ff;
+    background: rgba(0, 229, 255, 0.05);
+    color: #00e5ff;
+}
+
+.calc-checkbox {
+    background: #1a1a20;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.calc-checkbox input {
+    cursor: pointer;
+    accent-color: #00e5ff;
+    width: 18px;
+    height: 18px;
+}
+
+.calc-checkbox label {
+    cursor: pointer;
+    flex: 1;
+    font-size: 14px;
+}
+
+.calc-checkbox.active {
+    border-color: #00e5ff;
+}
+
+.calc-total {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.calc-total span {
+    color: #00e5ff;
+    font-size: 28px;
+}
+
+/* 3. Reviews Section */
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.review-card {
+    background: #141418;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #222;
+}
+
+.stars {
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: italic;
+    color: #dddddd;
+    margin-bottom: 15px;
+}
+
+.review-author {
+    font-size: 14px;
+    color: #00e5ff;
+    font-weight: 600;
+}
+
+/* 4. FAQ Section */
+.faq-container {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #141418;
+    border: 1px solid #222;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 20px;
+    text-align: left;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question::after {
+    content: '+';
+    color: #00e5ff;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #1a1a20;
+}
+
+.faq-answer p {
+    padding: 20px;
+    color: #aaaaaa;
+    font-size: 15px;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px;
+    transition: max-height 0.3s ease-in;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   CONTACT SECTION (ADDED)
+   ========================================================================== */
+.contact {
+    padding: 80px 5%;
+    background-color: #050507;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-container {
+    max-width: 700px;
+    width: 100%;
+    background: #141418;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    text-align: center;
+}
+
+.contact-container h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-container h2 span {
+    color: #00e5ff;
+}
+
+.lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a20;
+    border: 1px solid #333;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #00e5ff;
+}
+
+.btn-submit {
+    background: #00e5ff;
+    color: #000;
+    border: none;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #00c4db;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.contact-info a {
+    color: #00e5ff;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+    padding: 10px 20px;
+    background: #1a1a20;
+    border: 1px solid #333;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    border-color: #00e5ff;
+    color: #00e5ff;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .gallery-section h2, .calculator-section h2, .reviews-section h2, .faq-section h2 {
+        font-size: 26px;
+    }
+    .calc-container, .review-card, .contact-container {
+        padding: 20px;
+    }
+    .calc-total {
+        font-size: 18px;
+    }
+    .calc-total span {
+        font-size: 24px;
+    }
+}
